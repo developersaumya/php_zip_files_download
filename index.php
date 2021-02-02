@@ -1,16 +1,9 @@
 
-if(isset($_POST['submit']))
-{
-   /* create a compressed zip file */
-   $part=$_POST['part'];
-   $p=$_POST['p'];
-
 
 /* create a compressed zip file */
 function createZip($files = array(), $destination = '', $overwrite = false, $part) 
 {
-   $dir="procedure/";
-
+   $dir="procedure/"; // Directory name where file exist whose zip will created
    $validFiles = [];
    if(is_array($files)) 
    {
@@ -47,10 +40,7 @@ function createZip($files = array(), $destination = '', $overwrite = false, $par
    }
 }
 
-//$partt = "test_fol.zip" ;
-//$date=date('Y-m-d H:i:s');
-//$r = rand(11,99);
-$fileName = $part.'.zip';
+$fileName = $part.'.zip';  // FOLDER NAME to Download
 //$fileName = 'i.zip';
 $files_to_zip =   $p; //['remove-icon.png', 'ddlogo.png','467724274Open_Issue_List.xls'];
 $result = createZip($files_to_zip, $fileName,'',$part);
@@ -67,6 +57,6 @@ readfile($fileName);
 
 
 
-}
+
 
 
